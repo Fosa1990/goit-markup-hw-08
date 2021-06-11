@@ -1,0 +1,29 @@
+body {
+  color: var(--primary-text-color);
+
+  font-family: 'roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+
+// Картинки: делаем блоковыми + убирает пространство под картинкой
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// убираем подчеркивание и убираем правый отступ у всех ссылок
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+// убираем точку, margin и padding y всех списках
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

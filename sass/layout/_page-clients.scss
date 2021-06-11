@@ -1,0 +1,44 @@
+// ============================== Постоянные клиенты START ==============================
+// <UL> Список Клиентов
+.client {
+  display: flex;
+}
+// <LI> Клиенты
+.client__item {
+  width: calc((100% - 5 * 30px) / 6);
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+// <A> Размери ссылки для "Постоянные клиенты"
+.client__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 92px;
+  border: 1px solid var(--primary-icon-color);
+  border-radius: 4px;
+  color: var(--primary-icon-color);
+
+  transform: rotateY(0deg);
+
+  transition: color var(--time250ms) var(--cubic),
+    border-color var(--time250ms) var(--cubic),
+    transform var(--time1000ms) var(--cubic);
+
+  // <A> Ховер и фокус на ссылку (иконку и рамку)
+  &:hover,
+  &:focus {
+    border-color: var(--main-accent-color);
+    color: var(--main-accent-color);
+    transform: rotateY(360deg);
+  }
+}
+
+// <SVG> Иконки клиентов наследование цвета
+.client__icon {
+  fill: currentColor;
+}
+// ============================== Постоянные клиенты END ==============================

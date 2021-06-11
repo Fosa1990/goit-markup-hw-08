@@ -1,0 +1,242 @@
+// ============================== Подвал Footer START ==============================
+// <FOOTER>
+.footer {
+  display: flex;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  background-color: var(--footer-color);
+}
+// <DIV> Контейнер ОБЩИЙ в Футере
+.footer__container {
+  display: flex;
+}
+// <A> Ссылка Логотипа в Футере
+.footer__logo {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+// =============== Левая часть футера =================
+// <DIV> Контейнер Левой Части Футера
+.address__container {
+  align-items: center;
+  margin-right: 70px;
+}
+
+// <ADDRESS> Контейнер Контактов
+.address {
+  font-style: normal;
+}
+// <P> Текст Местоположения
+.address__text {
+  margin-top: 0;
+  margin-bottom: 9px;
+
+  color: var(--third-text-color);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+// <LI> Контакт Футера
+.address__item {
+  margin-top: 0;
+
+  &:not(:last-child) {
+    margin-bottom: 9px;
+  }
+}
+
+// <A> Ссылки Контактов Футера
+.address__link {
+  color: var(--address-color);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  transition: color var(--time250ms) var(--cubic);
+
+  .address__list &:hover,
+  .address__list &:focus {
+    color: var(--main-accent-color);
+  }
+}
+
+// ========== Присоеденийтесь ==========
+// <DIV> Контейнер ВСЕГО Футера
+.join-container {
+  align-items: center;
+  margin-right: 93px;
+}
+// <b> Текст "Присоеденяйтесь"
+.join-text {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+
+  color: var(--third-text-color);
+}
+// <UL> Список социальных сетей
+.join {
+  display: flex;
+}
+// <Li> социальная сеть
+.join__item {
+  border-radius: 50%;
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+// <A> Список социальных сетей в футере
+.join__link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-icon-color);
+  background-color: var(--social-bg-color);
+  box-shadow: var(--shadow-third);
+
+  transform: rotateZ(0deg);
+
+  transition: color var(--time250ms) var(--cubic),
+    background-color var(--time250ms) var(--cubic),
+    transform var(--time1250ms) var(--cubic);
+
+  &:hover,
+  &:focus {
+    color: var(--third-text-color);
+    background-color: var(--main-accent-color);
+    transform: rotateZ(-360deg);
+  }
+}
+
+// <SVG> Иконка социальной сети
+.join__icon {
+  fill: currentColor;
+}
+// ================= Правая часть футера ===============
+// <DIV> Контейнер правой части футера
+.subscription-container {
+  align-items: center;
+}
+// <Form>
+.subscription {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+// <Label>
+.subscription__label {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+
+  color: var(--third-text-color);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+// <Input> Поле "подписаться"
+.subscription__input {
+  display: flex;
+  align-items: center;
+  width: 358px;
+  height: 50px;
+  margin-right: 12px;
+  padding: 15px 16px;
+
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+
+  color: var(--address-color);
+  background-color: transparent;
+  border: 1px solid var(--address-border-color);
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px var(--black-color-15prts);
+  border-radius: 4px;
+
+  outline: none;
+
+  transition: border-color var(--time250ms) var(--cubic);
+
+  &:focus {
+    border-color: var(--main-accent-color);
+  }
+}
+
+// <Button> Кнопка "принятия спама"
+.subscription-button {
+  position: absolute;
+  bottom: 0;
+  right: -200px;
+
+  display: flex;
+  align-items: center;
+  justify-content: left;
+
+  overflow: hidden;
+  min-width: 200px;
+  height: 50px;
+  margin-bottom: 0;
+  padding: 10px 28px;
+  border: 0em;
+  border-radius: 4px;
+
+  cursor: pointer;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+
+  color: var(--third-text-color);
+  background-color: var(--main-accent-color);
+  box-shadow: 0px 4px 4px var(--black-color-15prts);
+
+  transition: background-color var(--time250ms) var(--cubic);
+
+  &:hover,
+  &:focus {
+    background-color: var(--secondary-accent-color);
+  }
+
+  &:active {
+    background-color: var(--secondary-accent-color);
+    box-shadow: var(--shadow-primary);
+    transform: translateY(4px);
+  }
+}
+
+// <SVG & Use> Иконка
+.subscription-button__icon {
+  position: absolute;
+  right: 15%;
+  top: 50%;
+  fill: currentColor;
+
+  transform: translateY(-50%);
+
+  transition: transform var(--time1250ms) var(--cubic);
+
+  // <SVG> Анимация иконки на кнопке
+  .subscription-button:hover &,
+  .subscription-button:focus & {
+    transform: translateY(-50%) rotateX(180deg);
+  }
+}
+
+// ============================== Подвал Footer END ==============================

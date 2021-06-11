@@ -1,0 +1,1137 @@
+/* ============================== Правила ============================== */
+:root {
+  --header-color: #ececec;
+  --footer-color: #2f303a;
+  --primary-text-color: #757575;
+  --secondary-text-color: #212121;
+  --third-text-color: #ffffff;
+  --button-white-color: #eeeeee;
+  /* Borders */
+  --card-border-color: #eeeeee;
+  --modal-border-color: rgba(0, 0, 0, 0.1);
+  --checkbox-border-color: #2a2a2a;
+  /* Accents */
+  --main-accent-color: #2196f3;
+  --secondary-accent-color: #188ce8;
+  /* BackGrounds */
+  --primary-bg-color: #e5e5e5;
+  --secondary-bg-color: #f5f4fa;
+  --banner-bg-color: #c4c4c4;
+  --social-bg-color: rgba(255, 255, 255, 0.1);
+  --card-bg-color: rgba(47, 48, 58, 0.8);
+  --card-portfolio-bg-color: rgba(33, 150, 243, 0.9);
+  --backdrop-color: rgba(0, 0, 0, 0.2);
+  /* Named Colors */
+  --black-color: #000000;
+  --address-color: var(--address-color);
+  --primary-icon-color: #afb1b8;
+  /* Gradient Colors */
+  --start-color: rgba(47, 48, 58, 0.4);
+  --end-color: rgba(47, 48, 58, 0.4);
+  /* Shadow Colors */
+  --shadow-primary: 0px 3px 1px rgba(0, 0, 0, 0.1),
+    0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+  --shadow-secondary: 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  --shadow-third: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* ============================== HTML ============================== */
+
+.header {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--header-color);
+}
+
+.footer {
+  background-color: var(--footer-color);
+}
+
+/* Скрыть заголовок */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+/* ============================== INDEX START ============================== */
+/* ============================== Body ============================== */
+/* ====================== Правила для всей страницы ====================== */
+body {
+  color: var(--primary-text-color);
+
+  font-family: 'roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+
+/* Картинки: делаем блоковыми + убирает пространство под картинкой */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* убираем подчеркивание и убираем правый отступ у всех ссылок */
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* убираем точку, margin и padding y всех списках */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Контейнер секции Section */
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+/* Контейнер Div  */
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Убрать вертикальный паддинг */
+.container.no-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+/* =================================== HEADER START =================================== */
+/* ============================== Главная навигация ============================== */
+/* Контейнер главной навигации */
+.main-navigation {
+  display: flex;
+  align-items: center;
+}
+/* <NAV> Контейнер Навигации по Страницам = Хедера */
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+/* <UL> Список Навигации по Страницам = Хедера */
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+/* <LI> Пункт навигации */
+.site-nav-item {
+  position: relative;
+}
+.site-nav-item:not(:last-child) {
+  margin-right: 50px;
+}
+/*  Полоска Текущей Странички - Стаитическая */
+.link.current::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 4px;
+  top: 49px;
+  left: 0;
+
+  border-radius: 2px;
+  background: var(--main-accent-color);
+}
+/* <A> Логотип */
+.logo {
+  width: 145px;
+  height: 31px;
+
+  font-family: 'raleway', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+
+  color: var(--main-accent-color);
+}
+.nav-logo {
+  margin-right: 93px;
+}
+/* <SPAN> Цвет Лого в Хедере*/
+.accent-logo-top {
+  color: #000000;
+}
+/* <UL> Список Контактов = Ховер/Фокус */
+.site-nav.list:hover,
+.site-nav.list:focus {
+  color: var(--main-accent-color);
+}
+/* <A> Навигация по страницам */
+.site-nav .link {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+
+  color: var(--secondary-text-color);
+
+  transition: color var(--time250ms) var(--cubic);
+}
+.site-nav .link:hover,
+.site-nav .link:focus {
+  color: var(--main-accent-color);
+}
+/* <CURRENT> Текущая Страница */
+.site-nav .link.current {
+  color: var(--main-accent-color);
+}
+/* ========== Контакты ========== */
+.contacts {
+  margin-left: auto;
+}
+/* <A> Ссылка в Контактах Хедера */
+.contacts .link {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+
+  height: 16px;
+  color: var(--primary-text-color);
+}
+/* <SVG> Контакты-иконки (Телефон и Конверт) */
+.icon-contacts {
+  fill: currentColor;
+  margin-right: 10px;
+
+  transform: rotateZ(0deg);
+
+  transition: transform var(--time250ms) var(--cubic);
+}
+/* <A:hover>--><SVG> Анимация иконок Конверта и Мобилки */
+.link:hover .icon-contacts,
+.link:focus .icon-contacts {
+  transform: rotateZ(360deg);
+}
+/* =================================== HEADER END =================================== */
+/* ============================== Баннер (Герой) START ============================== */
+/* <SECTION> Контейнер ВСЕЙ Секции Герой */
+.hero {
+  max-width: 1600px;
+  min-height: 600px;
+  margin: 0 auto;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background-image: linear-gradient(90deg, var(--start-color), var(--end-color)),
+    url('../images/bg-hero.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  background-color: var(--banner-bg-color);
+  /* background: rgb(47, 48, 68); */
+}
+/* <H1> Заголовок Секции */
+.hero-title {
+  margin: 0 auto 30px;
+  max-width: 696px;
+
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--third-text-color);
+}
+/* <BUTTON> Кнопка Секции Герой */
+.hero-button {
+  cursor: pointer;
+  padding: 10px 32px;
+  min-width: 200px;
+  height: 50px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  border-radius: 4px;
+  border-color: transparent;
+  color: var(--third-text-color);
+  background-color: var(--main-accent-color);
+
+  transition: color var(--time250ms) var(--cubic),
+    background-color var(--time250ms) var(--cubic);
+}
+.hero-button:hover,
+.hero-button:focus {
+  color: var(--third-text-color);
+  background-color: var(--secondary-accent-color);
+}
+/* ============================== Баннер (Герой) END ============================== */
+/* ============================== Особенности START ============================== */
+/* <SECTION> Контейнер ВСЕЙ секции "Особености" */
+.features {
+  padding-top: 94px;
+}
+/* <UL> Список Особеностей */
+.features-list {
+  display: flex;
+}
+/* <LI> Пункт Особености */
+.features-item {
+  width: 270px;
+}
+.features-item:not(:last-child) {
+  margin-right: 30px;
+}
+/* <H3> Заголовок Особености */
+.title {
+  margin-top: 0;
+  margin-bottom: 10px;
+
+  color: var(--secondary-text-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+}
+/* <P> Текст Особености */
+.title-text {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-weight: 400;
+  color: var(--primary-text-color);
+}
+/* <DIV> Контейнер иконок в списках */
+.features-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 120px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  background-color: var(--secondary-bg-color);
+}
+/* <SVG> Иконки в списках */
+.features-icon {
+  fill: currentColor;
+  width: 70px;
+  height: 70px;
+}
+/* ============================== Особенности END ============================== */
+/* ============================== Чем мы занимаемся START ============================== */
+/* <SECTION> Контейнер ВСЕЙ секции */
+.section.works {
+  padding-top: 0;
+}
+/* <H2> Заголовок "Чем мы занимаемся" */
+.section-title {
+  margin-top: 0;
+  margin-bottom: 50px;
+
+  color: var(--secondary-text-color);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  text-align: center;
+}
+/* <UL> Список Иконок */
+.works-list {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+}
+/*  =============== Карточки Оверлей START =============== */
+/* <LI> Список иконок */
+.works-item {
+  position: relative;
+}
+/* <DIV> Контейнер для надписи поверх иконки */
+.works-item-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 27px;
+
+  background: var(--card-bg-color);
+}
+/* <P> Текст Оверлея */
+.works-item-img-text {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--third-text-color);
+}
+/*  =============== Карточки Оверлей END ===============  */
+/* ============================== Чем мы занимаемся END============================== */
+/* ============================== Наша команда START ============================== */
+/* <SECTION> Контейнер Всей секции Наша Команда */
+.section.team {
+  background-color: var(--secondary-bg-color);
+}
+/* <UL> Список Сотрудников Камнды */
+.team-list {
+  display: flex;
+  color: var(--secondary-text-color);
+}
+/* <LI> Сотрудник Команды*/
+.team-item:not(:last-child) {
+  margin-right: 30px;
+}
+.team-item {
+  padding-bottom: 30px;
+
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: var(--shadow-primary);
+  background: var(--third-text-color);
+}
+/* <DIV> Контейнер Низа карточки */
+.team-list-title {
+  padding: 30px 32px 16px 32px;
+}
+/* <H3> Название Сотрудника */
+.team-list-name {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.18;
+  text-align: center;
+}
+/* <P> Должность Сотрудника */
+.team-list-job {
+  margin: 0;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.18;
+  text-align: center;
+  color: var(--primary-text-color);
+}
+/* =============== Список социальных сетей в карточках =============== */
+/* <A> Ссылка Сотрудника Команды */
+.team-link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-icon-color);
+
+  transform: rotateZ(0deg);
+
+  transition: color var(--time250ms) var(--cubic),
+    background-color var(--time250ms) var(--cubic),
+    transform var(--time250ms) var(--cubic);
+}
+/* <UL> Список на соцмальные сети в карточке Сотрудника Команды */
+.team-list-socials {
+  display: flex;
+  padding-right: 32px;
+  padding-left: 32px;
+}
+.team-item-social:not(:last-child) {
+  width: calc((100% - 3 * 10px) / 4);
+  margin-right: 10px;
+}
+/* <SVG> Иконка соцмальные сети в карточке Сотрудника Команды */
+.icon-team {
+  fill: currentColor;
+}
+/* <A> Ссылка соцмальной сети в карточке Сотрудника Команды */
+.team-link:hover,
+.team-link:focus {
+  color: var(--third-text-color);
+  background-color: var(--main-accent-color);
+  transform: rotateZ(360deg);
+}
+/* ============================== Наша команда END ============================== */
+/* ============================== Постоянные клиенты START ============================== */
+/* <UL> Список Клиентов */
+.clients-list {
+  display: flex;
+}
+/* <LI> Клиенты */
+.client-item {
+  width: calc((100% - 5 * 30px) / 6);
+}
+.client-item:not(:last-child) {
+  margin-right: 30px;
+}
+/* <A> Размери ссылки для "Постоянные клиенты" */
+.link-client {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 92px;
+  border: 1px solid var(--primary-icon-color);
+  border-radius: 4px;
+  color: var(--primary-icon-color);
+
+  transform: rotateY(0deg);
+
+  transition: color var(--time250ms) var(--cubic),
+    border-color var(--time250ms) var(--cubic),
+    transform var(--time1000ms) var(--cubic);
+}
+/* <A> Ховер и фокус на ссылку (иконку и рамку) */
+.link-client:hover,
+.link-client:focus {
+  border-color: var(--main-accent-color);
+  color: var(--main-accent-color);
+  transform: rotateY(360deg);
+}
+/* <SVG> Иконки клиентов наследование цвета */
+.icon-company {
+  fill: currentColor;
+}
+/* ============================== Постоянные клиенты END ============================== */
+/* ============================== INDEX END ============================== */
+
+/* ============================== PORTFOLIO START ============================== */
+/* <UL> Список фильтров */
+.filters {
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+/* <LI> Фильтры */
+.filter-item:not(:last-child) {
+  margin-right: 8px;
+}
+/* <Button> Кнопки фильтров */
+.button {
+  border: none;
+  border-radius: 4px;
+  height: 38px;
+  padding: 6px 22px;
+
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--black-color);
+
+  transition: color var(--time250ms) var(--cubic),
+    background-color var(--time250ms) var(--cubic),
+    box-shadow var(--time250ms) var(--cubic);
+}
+.button:hover,
+.button:focus {
+  color: var(--third-text-color);
+  background-color: var(--main-accent-color);
+  box-shadow: var(--shadow-primary);
+}
+/* ========== Плитки с карточками START ========== */
+/* <UL> Список Карточек */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+/* <LI> Карточки */
+.card {
+  flex-basis: calc((100% - 90px) / 3);
+  margin-top: 30px;
+  margin-left: 30px;
+
+  max-width: 370px;
+}
+/* <A> Ссылка Карточек */
+.card-link {
+  display: block;
+  padding-top: 0;
+  transition: box-shadow var(--time250ms) var(--cubic);
+}
+
+.card-link:hover,
+.card-link:focus {
+  box-shadow: var(--shadow-secondary);
+}
+/* ========== Плитки с карточками END ========== */
+/* ========== Карточки - Оверлей с Текстом START ========== */
+/* <DIV> Контейнер для иконки и оверлея */
+.card-thumb {
+  position: relative;
+  overflow: hidden;
+}
+/* <DIV> Контейнер Оверлея */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: var(--card-portfolio-bg-color);
+
+  opacity: 0;
+
+  transform: translateY(100%);
+  transition: transform var(--time250ms) var(--cubic),
+    opacity var(--time250ms) var(--cubic);
+}
+.card-link:hover .card-overlay,
+.card-link:focus .card-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+/* <P> Текст Оверлея */
+.card-overlay-text {
+  margin: 0;
+  padding: 63px 24px;
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--third-text-color);
+  overflow: auto;
+}
+
+/* ========== Карточки - Оверлей с Текстом END ========== */
+/* ========== Портфолио карточки - надпись по верху START ========== */
+/* <DIV> Контейнер Низа Карточки */
+.card-blank {
+  padding: 20px 24px;
+
+  border-bottom: 1px solid var(--card-border-color);
+  border-left: 1px solid var(--card-border-color);
+  border-right: 1px solid var(--card-border-color);
+}
+/* <H2> Название Карточки */
+.card-name {
+  margin-top: 0;
+  margin-bottom: 4px;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.03em;
+  color: var(--secondary-text-color);
+}
+/* <P> Описание карточки */
+.card-text {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.03em;
+  color: var(--primary-text-color);
+}
+/* ============================== PORTFOLIO END ============================== */
+/* ============================== Подвал Footer START ============================== */
+/* <FOOTER> */
+.footer {
+  display: flex;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+/* <DIV> Контейнер ОБЩИЙ в Футере */
+.footer-container {
+  display: flex;
+}
+/* <A> Ссылка Логотипа в Футере */
+.footer-logo {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* =============== Левая часть футера ================= */
+/* <DIV> Контейнер Левой Части Футера */
+.address-container {
+  align-items: center;
+  margin-right: 70px;
+}
+/* <SPAN> Цвет Акцента Лого в Футере */
+.accent-logo-bot {
+  color: var(--third-text-color);
+}
+/* <ADDRESS> Контейнер Контактов */
+.address {
+  font-style: normal;
+}
+/* <P> Текст Местоположения */
+.address-text {
+  margin-top: 0;
+  margin-bottom: 9px;
+
+  color: var(--third-text-color);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+/* <LI> Контакт Футера */
+.address-nav-item {
+  margin-top: 0;
+}
+.address-nav-item:not(:last-child) {
+  margin-bottom: 9px;
+}
+/* <A> Ссылки Контактов Футера */
+.address-nav .link {
+  color: var(--address-color);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  transition: color var(--time250ms) var(--cubic);
+}
+.address-nav .link:hover,
+.address-nav .link:focus {
+  color: var(--main-accent-color);
+}
+
+/* ========== Присоеденийтесь ========== */
+/* <DIV> Контейнер ВСЕГО Футера */
+.join-container {
+  align-items: center;
+  margin-right: 93px;
+}
+/* <b> Текст "Присоеденяйтесь" */
+.join-text {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+
+  color: var(--third-text-color);
+}
+/* <UL> Список социальных сетей */
+.join-list {
+  display: flex;
+}
+/* <Li> социальная сеть */
+.join-item {
+  border-radius: 50%;
+  /* outline: 1px solid red; */
+}
+.join-item:not(:last-child) {
+  margin-right: 10px;
+}
+/* <A> Список социальных сетей в футере */
+.join-link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-icon-color);
+  background-color: var(--social-bg-color);
+  box-shadow: var(--shadow-third);
+
+  transform: rotateZ(0deg);
+
+  transition: color var(--time250ms) var(--cubic),
+    background-color var(--time250ms) var(--cubic),
+    transform var(--time1250ms) var(--cubic);
+}
+
+.join-link:hover,
+.join-link:focus {
+  color: var(--third-text-color);
+  background-color: var(--main-accent-color);
+  transform: rotateZ(-360deg);
+}
+/* <SVG> Иконка социальной сети */
+.icon-join {
+  fill: currentColor;
+}
+/* ================= Правая часть футера =============== */
+/* <DIV> Контейнер правой части футера */
+.subscription-container {
+  align-items: center;
+}
+/* <Form> */
+.subscription-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+/* <Label> */
+.subscription-label {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+
+  color: var(--third-text-color);
+}
+/* <Input> Поле "подписаться" */
+.subscription-input {
+  display: flex;
+  align-items: center;
+  width: 358px;
+  height: 50px;
+  margin-right: 12px;
+  padding: 15px 16px;
+
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+
+  color: var(--address-color);
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px var(--black-color-15prts);
+  border-radius: 4px;
+
+  outline: none;
+
+  transition: border-color var(--time250ms) var(--cubic);
+}
+.subscription-input:focus {
+  border-color: var(--main-accent-color);
+}
+/* <Button> Кнопка "принятия спама" */
+.subscription-button {
+  position: absolute;
+  bottom: 0;
+  right: -200px;
+
+  display: flex;
+  align-items: center;
+  justify-content: left;
+
+  overflow: hidden;
+  width: 200px;
+  height: 50px;
+  margin-bottom: 0;
+  padding: 10px 28px;
+  border: 0em;
+
+  font-weight: 700;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+
+  color: var(--third-text-color);
+  background-color: var(--main-accent-color);
+  box-shadow: 0px 4px 4px var(--black-color-15prts);
+
+  transition: background-color var(--time250ms) var(--cubic);
+}
+.subscription-button:hover,
+.subscription-button:focus {
+  background-color: var(--secondary-accent-color);
+}
+/* <SVG & Use> Иконка */
+.icon-send {
+  position: absolute;
+  right: 15%;
+  top: 50%;
+  fill: currentColor;
+
+  transform: translateY(-50%);
+
+  transition: transform var(--time250ms) var(--cubic);
+}
+/* TEST */
+.subscription-button:hover .icon-send,
+.subscription-button:focus .icon-send {
+  transform: translateY(-50%) rotateX(180deg);
+}
+/* ============================== Подвал Footer END ============================== */
+/* ============================== Modal Window START ==============================  */
+/* <DIV> Бэкдроп - задний фон */
+.backdrop {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--backdrop-color);
+
+  opacity: 1;
+
+  transition: opacity var(--time250ms) var(--cubic),
+    visibility var(--time250ms) var(--cubic);
+}
+/* Не видимый фон */
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+/* <DIV> Модальное окно */
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  min-height: 581px;
+  min-width: 528px;
+
+  border-radius: 4px;
+  background-color: var(--third-text-color);
+
+  transform: translate(-50%, -50%) scale(1);
+
+  transition: transform var(--time250ms) var(--cubic);
+}
+
+/* ===== Форма модального окна ===== */
+/* <Form> Форма */
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  padding: 40px;
+}
+/* <P> Заголовок формы */
+.description {
+  margin-bottom: 30px;
+  margin-top: 0;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  color: var(--secondary-text-color);
+}
+/* <Label> Контейнер поля ввода */
+.form-field {
+  position: relative;
+  width: 100%;
+}
+.form-field:not(:last-child) {
+  margin-bottom: 28px;
+}
+/* <Input> Поле ввода*/
+.form-input {
+  width: 100%;
+  height: 40px;
+  padding: 12px 12px 12px 42px;
+
+  color: var(--primary-text-color);
+
+  box-sizing: border-box;
+  border: 1px solid var(--black-light-color);
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px var(--black-color-15prts);
+
+  transition: border var(--time250ms) var(--cubic);
+
+  outline: none;
+}
+/* <Input> Анимация рамки при фокусе */
+.form-field:focus-within > .form-input {
+  border: 1px solid var(--main-accent-color);
+}
+/* <Span> Описание поля */
+.form-label {
+  position: absolute;
+  top: 50%;
+  left: 9%;
+
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: var(--primary-text-color);
+
+  transform: translate(0, -50%);
+  transition: transform var(--time250ms) linear, color var(--time250ms) var(--cubic);
+}
+/* <Span> Анимация текста при фокусе поля ввода */
+.form-field:focus-within > .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+  color: var(--main-accent-color);
+  transform: translateY(-40px) translateX(-40px);
+}
+/* <Textarea> Полле воода комментария */
+.form-comment {
+  resize: none;
+  width: 100%;
+  height: 120px;
+  padding: 12px;
+
+  box-sizing: border-box;
+  border: 1px solid var(--black-light-color);
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px var(--black-color-15prts);
+
+  transition: color var(--time250ms) var(--cubic),
+    border-color var(--time250ms) var(--cubic);
+
+  outline: none;
+}
+.form-field:focus-within .form-comment {
+  color: var(--secondary-text-color);
+  border-color: var(--main-accent-color);
+}
+.form-comment::placeholder {
+  color: var(--gray-color);
+}
+/* <Span> Описание поля коментария */
+.form-label-comment {
+  position: absolute;
+  top: -15%;
+  left: 0;
+
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: var(--primary-text-color);
+
+  transition: transform var(--time1000ms) var(--cubic),
+    color var(--time250ms) var(--cubic);
+}
+/* <Span> Текст Коментария */
+.form-field:focus-within > .form-label-comment,
+.form-input:not(:placeholder-shown) + .form-label-comment {
+  color: var(--main-accent-color);
+  transform: translateX(225%);
+}
+/* =======================test============================= */
+.form-input::placeholder {
+  color: transparent;
+  transition: color var(--time250ms) var(--cubic);
+}
+.form-field:focus-within .form-input::placeholder {
+  color: var(--gray-color);
+}
+/* =======================test============================= */
+/* <Label> Условия договора */
+.form-policy {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+/* <Input> Скртыть стандарртный чекбокс */
+.checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+/* <Span> Иконка-чекбокс */
+.icon-checkbox {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  border: 2px solid #2a2a2a;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* <Span> Текст */
+.checkbox-policy {
+  font-size: 14px;
+  line-height: 1.71;
+
+  color: var(--primary-text-color);
+}
+/* <Icon-checkbox> Заменят чекбокс на иконку при клике */
+.checkbox:checked + .icon-checkbox {
+  border-color: transparent;
+  background-color: var(--main-accent-color);
+  background-image: url(../images/icon-check.svg);
+  background-size: contain;
+  background-origin: border-box;
+}
+/* <Icon-checkbox> Фокус на чекбос (Таб) */
+.checkbox:focus + .icon-checkbox {
+  border-color: var(--main-accent-color);
+}
+/* <SVG> form-icon */
+.form-icon {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 3%;
+
+  transform: translateY(-50%);
+
+  transition: fill var(--time250ms) var(--cubic);
+}
+.form-field:focus-within > .form-icon {
+  fill: var(--main-accent-color);
+}
+/* <a> Ссылка "Условия договора" */
+.checkbox-link {
+  color: var(--main-accent-color);
+  text-decoration: underline;
+  outline: none;
+}
+.checkbox-link:focus {
+  outline: 1px solid var(--main-accent-color);
+}
+/* <Div> Контейнер кнопки отправить Форму */
+.button-submit {
+  display: flex;
+  justify-content: center;
+}
+/* <Button> Кнопка Отправить форму */
+.button-submit .submit-button {
+  box-shadow: 0px 4px 4px var(--black-color-15prts);
+}
+
+/* Кнопки Закрыть Модальное Окно */
+/* <Button> Кнопка закрыть */
+.modal-close {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 2%;
+  right: 2%;
+  width: 30px;
+  height: 30px;
+
+  background-color: var(--third-text-color);
+  border-radius: 50%;
+  border: 1px solid var(--modal-border-color);
+
+  cursor: pointer;
+
+  transform: rotateZ(0deg);
+  transition: transform var(--time1000ms) var(--cubic),
+    color var(--time250ms) var(--cubic) var(--time500ms);
+}
+.modal-close:hover,
+.modal-close:focus {
+  transform: rotateZ(360deg);
+  color: var(--main-accent-color);
+}
+.icon-modal-close {
+  fill: currentColor;
+}
+/* ============================== Modal Window END ==============================  */

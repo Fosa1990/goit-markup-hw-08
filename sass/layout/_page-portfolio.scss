@@ -1,0 +1,111 @@
+// ============================== PORTFOLIO START ==============================
+// <UL> Список фильтров
+.filter {
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+// <LI> Фильтры
+.filter__item:not(:last-child) {
+  margin-right: 8px;
+}
+
+// ========== Плитки с карточками START ==========
+// <UL> Список Карточек
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+// <LI> Карточки
+.card-list__item{
+  flex-basis: calc((100% - 90px) / 3);
+  margin-top: 30px;
+  margin-left: 30px;
+
+  max-width: 370px;
+}
+// <A> Ссылка Карточек
+.card-list__link {
+  display: block;
+  padding-top: 0;
+  transition: box-shadow var(--time250ms) var(--cubic);
+
+  &:hover,
+  &:focus {
+    box-shadow: var(--shadow-secondary);
+  }
+}
+// ========== Плитки с карточками END ==========
+// ========== Карточки - Оверлей с Текстом START ==========
+// <DIV> Контейнер для иконки и оверлея
+.card-list__thumb {
+  position: relative;
+  overflow: hidden;
+}
+// <DIV> Контейнер Оверлея
+.card-list__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: var(--card-portfolio-bg-color);
+
+  opacity: 0;
+
+  transform: translateY(100%);
+  transition: transform var(--time250ms) var(--cubic),
+    opacity var(--time250ms) var(--cubic);
+
+  .card-list__link:hover &,
+  .card-list__link:focus & {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+// <P> Текст Оверлея
+.card-list__overlay-text {
+  margin: 0;
+  padding: 63px 24px;
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--third-text-color);
+  overflow: auto;
+}
+
+// ========== Карточки - Оверлей с Текстом END ==========
+// ========== Портфолио карточки - надпись по верху START ==========
+// <DIV> Контейнер Низа Карточки
+.card-list__blank {
+  padding: 20px 24px;
+
+  border-bottom: 1px solid var(--card-border-color);
+  border-left: 1px solid var(--card-border-color);
+  border-right: 1px solid var(--card-border-color);
+}
+// <H2> Название Карточки
+.card-list__name {
+  margin-top: 0;
+  margin-bottom: 4px;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.03em;
+  color: var(--secondary-text-color);
+}
+// <P> Описание карточки
+.card-list__text {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.03em;
+  color: var(--primary-text-color);
+}
+// ============================== PORTFOLIO END ==============================

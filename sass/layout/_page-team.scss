@@ -1,0 +1,84 @@
+// ============================== Наша команда START ==============================
+// <SECTION> Контейнер Всей секции Наша Команда
+.section.team {
+  background-color: var(--secondary-bg-color);
+}
+// <UL> Список Сотрудников Камнды
+.team__list {
+  display: flex;
+  color: var(--secondary-text-color);
+}
+// <LI> Сотрудник Команды
+
+.team__item {
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: var(--shadow-primary);
+  background: var(--third-text-color);
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+// <DIV> Контейнер Низа карточки
+.team__box {
+  padding: 30px 32px 16px 32px;
+}
+// <H3> Название Сотрудника
+.team__name {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.18;
+  text-align: center;
+}
+// <P> Должность Сотрудника
+.team__job {
+  margin: 0;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.18;
+  text-align: center;
+  color: var(--primary-text-color);
+}
+// =============== Список социальных сетей в карточках ===============
+// <A> Ссылка Сотрудника Команды
+.team__social-link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-icon-color);
+
+  transform: rotateZ(0deg);
+
+  transition: color var(--time250ms) var(--cubic),
+    background-color var(--time250ms) var(--cubic),
+    transform var(--time1250ms) var(--cubic);
+
+  // <A> Ссылка соцмальной сети в карточке Сотрудника Команды
+  &:hover,
+  &:focus {
+    color: var(--third-text-color);
+    background-color: var(--main-accent-color);
+    transform: rotateZ(360deg);
+  }
+}
+// <UL> Список на соцмальные сети в карточке Сотрудника Команды
+.team__socials-list {
+  display: flex;
+  padding-top: 16px;
+}
+.team__social-item:not(:last-child) {
+  width: calc((100% - 3 * 10px) / 4);
+  margin-right: 10px;
+}
+// <SVG> Иконка соцмальные сети в карточке Сотрудника Команды
+.team__social-icon {
+  fill: currentColor;
+}
+
+// ============================== Наша команда END ==============================

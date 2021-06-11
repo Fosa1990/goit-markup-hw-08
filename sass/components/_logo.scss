@@ -1,0 +1,24 @@
+// <A> Логотип
+.logo {
+  width: 145px;
+  height: 31px;
+
+  font-family: 'raleway', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+
+  color: var(--main-accent-color);
+}
+
+// <SPAN> Цвет Лого в Хедере
+.main-nav__logo--black {
+  color: var(--black-color);
+}
+
+// <SPAN> Цвет Акцента Лого в Футере
+.logo--white {
+  color: var(--third-text-color);
+}

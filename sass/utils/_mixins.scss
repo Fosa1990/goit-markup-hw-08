@@ -1,0 +1,12 @@
+// Add mixin: @include миксин(аргументы);
+// @include button-theme($color, $bg-color, $color-text-hover, $color-bg-hover);
+@mixin button-theme($color: var(--third-text-color), $bg-color: var(--main-accent-color), $color-text-hover: var(--third-text-color), $color-bg-hover: var(--secondary-accent-color)) {
+  color: $color;
+  border-color: transparent;
+  background-color: $bg-color;
+
+  &:hover {
+      color: $color-text-hover;
+      background-color: $color-bg-hover;
+  }
+}

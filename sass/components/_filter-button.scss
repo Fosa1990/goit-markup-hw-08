@@ -1,0 +1,34 @@
+.filter-button {
+  cursor: pointer;
+
+  height: 38px;
+  padding: 6px 22px;
+
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  letter-spacing: 0.03em;
+  color: var(--black-color);
+
+  border: none;
+  border-radius: 4px;
+
+  transition: color var(--time250ms) var(--cubic),
+    background-color var(--time250ms) var(--cubic),
+    box-shadow var(--time250ms) var(--cubic);
+
+  &:hover,
+  &:focus {
+    color: var(--third-text-color);
+    background-color: var(--main-accent-color);
+    box-shadow: var(--shadow-primary);
+  }
+
+  &:active {
+    color: var(--third-text-color);
+    background-color: var(--secondary-accent-color);
+    box-shadow: var(--shadow-primary);
+    transform: translateY(4px);
+  }
+}

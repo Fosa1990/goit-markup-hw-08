@@ -1,0 +1,55 @@
+// <DIV> Модальное окно
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  min-height: 581px;
+  min-width: 528px;
+
+  border-radius: 4px;
+  background-color: var(--third-text-color);
+
+  transform: translate(-50%, -50%) scale(1);
+
+  transition: transform var(--time250ms) var(--cubic);
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+// Кнопки Закрыть Модальное Окно
+// <Button> Кнопка закрыть
+.modal-close {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 2%;
+  right: 2%;
+  width: 30px;
+  height: 30px;
+
+  background-color: var(--third-text-color);
+  border-radius: 50%;
+  border: 1px solid var(--modal-border-color);
+
+  cursor: pointer;
+
+  transform: rotateZ(0deg);
+  transition: transform var(--time1000ms) var(--cubic),
+    color var(--time250ms) var(--cubic) var(--time500ms);
+
+  &:hover,
+  &:focus {
+    transform: rotateZ(360deg);
+    color: var(--main-accent-color);
+  }
+  &:active {
+    box-shadow: 0px 7px 2px 4px var(--shadow-primary);
+    transform: translateY(4px);
+  }
+}
+
+.modal-close__icon {
+  fill: currentColor;
+}
