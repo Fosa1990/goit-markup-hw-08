@@ -1,17 +1,54 @@
 // ============================== Постоянные клиенты START ==============================
+.clients {
+  // <H2> Заголовок
+  & .title {
+    font-size: 28px;
+    line-height: 1.17;
+    margin-bottom: 30px;
+  }
+}
 // <UL> Список Клиентов
 .client {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 // <LI> Клиенты
 .client__item {
-  width: calc((100% - 5 * 30px) / 6);
-
-  &:not(:last-child) {
+  @media screen and (max-width: 767px) {
+    width: calc((100% - 2 * 30px) / 2);
     margin-right: 30px;
+    margin-bottom: 30px;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: calc((100% - 2 * 30px) / 3);
+    margin-right: 30px;
+    margin-bottom: 30px;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+    &:nth-last-child(-n + 3) {
+      margin-bottom: 0;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    width: calc((100% - 5 * 30px) / 6);
+    margin-bottom: 0;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
   }
 }
-
 // <A> Размери ссылки для "Постоянные клиенты"
 .client__link {
   display: flex;
@@ -22,11 +59,11 @@
   border-radius: 4px;
   color: var(--primary-icon-color);
 
-  transform: rotateY(0deg);
+  transform: rotateY(0deg) scale(1);
 
   transition: color var(--time250ms) var(--cubic),
     border-color var(--time250ms) var(--cubic),
-    transform var(--time1000ms) var(--cubic);
+    transform var(--time1000ms) var(--cubic) var(--time250ms);
 
   // <A> Ховер и фокус на ссылку (иконку и рамку)
   &:hover,
@@ -34,6 +71,10 @@
     border-color: var(--main-accent-color);
     color: var(--main-accent-color);
     transform: rotateY(360deg);
+
+    @media screen and (min-width: $desktop) {
+      transform: rotateY(360deg) scale(1.1);
+    }
   }
 }
 

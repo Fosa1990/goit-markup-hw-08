@@ -1,30 +1,106 @@
 // ============================== Баннер (Герой) START ==============================
 // <SECTION> Контейнер ВСЕЙ Секции Герой
 .hero {
-  max-width: 1600px;
-  min-height: 600px;
+  max-width: 767px;
+  height: 400px;
   margin: 0 auto;
-  padding-top: 200px;
-  padding-bottom: 200px;
+  padding: 118px 60px;
+
+  text-align: center;
+
+  background-color: var(--banner-bg-color);
   background-image: linear-gradient(90deg, var(--start-color), var(--end-color)),
-    url('../images/bg-hero.jpg');
+    url('../../images/hero-bg/hero-bg-mobile.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  text-align: center;
-  background-color: var(--banner-bg-color);
-  // background: rgb(47, 48, 68);
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    & {
+      background-image: linear-gradient(
+          90deg,
+          var(--start-color),
+          var(--end-color)
+        ),
+        url('../../images/hero-bg/hero-bg-mobile@2x.jpg');
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    & {
+      max-width: 1199px;
+      height: 400px;
+
+      background-image: linear-gradient(
+          90deg,
+          var(--start-color),
+          var(--end-color)
+        ),
+        url('../../images/hero-bg/hero-bg-tablet.jpg');
+    }
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      & {
+        background-image: linear-gradient(
+            90deg,
+            var(--start-color),
+            var(--end-color)
+          ),
+          url('../../images/hero-bg/hero-bg-tablet@2x.jpg');
+      }
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    & {
+      max-width: 1600px;
+      height: 600px;
+      padding-top: 200px;
+
+      background-image: linear-gradient(
+          90deg,
+          var(--start-color),
+          var(--end-color)
+        ),
+        url('../../images/hero-bg/hero-bg-desktop.jpg');
+    }
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      & {
+        background-image: linear-gradient(
+            90deg,
+            var(--start-color),
+            var(--end-color)
+          ),
+          url('../../images/hero-bg/hero-bg-desktop@2x.jpg');
+      }
+    }
+  }
 }
 // <H1> Заголовок Секции
 .hero__title {
   margin: 0 auto 30px;
-  max-width: 696px;
+  max-width: 360px;
 
+  text-align: center;
   font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
+  font-size: 26px;
+  line-height: 1.62;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--third-text-color);
+
+  @media screen and (min-width: $desktop) {
+    max-width: 696px;
+  }
+
+  // original
+  // font-size: 44px;
+  // line-height: 1.36;
 }
 // ============================== Баннер (Герой) END ==============================

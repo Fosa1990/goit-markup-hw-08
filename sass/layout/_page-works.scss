@@ -3,6 +3,10 @@
 .works {
   padding-top: 0;
   padding-bottom: 94px;
+
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
 }
 
 // <UL> Список Иконок
@@ -12,9 +16,17 @@
   justify-content: space-between;
 }
 //  =============== Карточки Оверлей START ===============
-// <LI> Список иконок
+// <LI> Карточка Иконки
 .works__item {
   position: relative;
+}
+
+.works__image {
+  width: 100%;
+
+  @media screen and (min-width: $desktop) {
+    width: 370px;
+  }
 }
 // <DIV> Контейнер для надписи поверх иконки
 .works__thumb {

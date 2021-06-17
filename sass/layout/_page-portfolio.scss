@@ -2,13 +2,36 @@
 // <UL> Список фильтров
 .filter {
   display: flex;
-  justify-content: center;
-  margin-top: 0;
-  margin-bottom: 50px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  margin-top: 60px;
+  margin-bottom: 40px;
+
+  width: 100%;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+
+  @media screen and (min-width: $desktop) {
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 50px;
+  }
 }
 // <LI> Фильтры
-.filter__item:not(:last-child) {
-  margin-right: 8px;
+.filter__item {
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  @media screen and (max-width: 767px) {
+    &:nth-child(-n + 3) {
+      margin-bottom: 15px;
+    }
+  }
 }
 
 // ========== Плитки с карточками START ==========
@@ -20,22 +43,47 @@
   margin-top: -30px;
 }
 // <LI> Карточки
-.card-list__item{
-  flex-basis: calc((100% - 90px) / 3);
-  margin-top: 30px;
+.card-list__item {
   margin-left: 30px;
+  margin-top: 30px;
 
-  max-width: 370px;
+  max-width: 450px;
+
+  @media screen and (min-width: $tablet) and (max-width: 1199px) {
+    width: calc((100% - 2 * 30px) / 2);
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    flex-basis: calc((100% - 90px) / 3);
+    max-width: 370px;
+  }
 }
 // <A> Ссылка Карточек
 .card-list__link {
   display: block;
   padding-top: 0;
+
+  transform: scale(1);
+
   transition: box-shadow var(--time250ms) var(--cubic);
+
+  @media screen and (min-width: $desktop) {
+    transform: scale(1);
+
+    transition: transform var(--time1000ms) var(--cubic);
+  }
 
   &:hover,
   &:focus {
     box-shadow: var(--shadow-secondary);
+
+    @media screen and (min-width: $desktop) {
+      transform: scale(1.1);
+    }
   }
 }
 // ========== Плитки с карточками END ==========

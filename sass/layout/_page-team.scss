@@ -1,12 +1,25 @@
 // ============================== Наша команда START ==============================
 // <SECTION> Контейнер Всей секции Наша Команда
-.section.team {
+.team {
   background-color: var(--secondary-bg-color);
+  & .title {
+    margin-bottom: 30px;
+
+    font-size: 28px;
+    line-height: 1.17;
+  }
 }
 // <UL> Список Сотрудников Камнды
 .team__list {
-  display: flex;
   color: var(--secondary-text-color);
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @media screen and (min-width: $desktop) {
+    flex-wrap: nowrap;
+  }
 }
 // <LI> Сотрудник Команды
 
@@ -15,34 +28,77 @@
   box-shadow: var(--shadow-primary);
   background: var(--third-text-color);
 
-  &:not(:last-child) {
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+  @media screen and (min-width: $tablet) and (max-width: 1199px) {
+    width: calc((100% - 2 * 15px) / 2);
     margin-right: 30px;
+    margin-bottom: 30px;
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    width: calc((100% - 3 * 30px) / 4);
+    margin-right: 30px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
   }
 }
-// <DIV> Контейнер Низа карточки
+
+// <IMG> Иконки
+.team__image {
+  width: 100%;
+}
+// <DIV> Контейнер Низу карточки
 .team__box {
-  padding: 30px 32px 16px 32px;
+  padding: 30px 122px 24px;
+
+  @media screen and (min-width: $tablet) {
+    padding: 30px 74px 24px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding: 30px 32px 16px;
+  }
 }
 // <H3> Название Сотрудника
 .team__name {
   margin-top: 0;
   margin-bottom: 10px;
+
+  text-align: center;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.18;
-  text-align: center;
 }
 // <P> Должность Сотрудника
 .team__job {
   margin: 0;
 
+  text-align: center;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.18;
-  text-align: center;
   color: var(--primary-text-color);
 }
 // =============== Список социальных сетей в карточках ===============
+// <UL> Список на соцмальные сети в карточке Сотрудника Команды
+.team__socials-list {
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+}
+.team__social-item:not(:last-child) {
+  margin-right: 10px;
+}
 // <A> Ссылка Сотрудника Команды
 .team__social-link {
   display: flex;
@@ -66,15 +122,6 @@
     background-color: var(--main-accent-color);
     transform: rotateZ(360deg);
   }
-}
-// <UL> Список на соцмальные сети в карточке Сотрудника Команды
-.team__socials-list {
-  display: flex;
-  padding-top: 16px;
-}
-.team__social-item:not(:last-child) {
-  width: calc((100% - 3 * 10px) / 4);
-  margin-right: 10px;
 }
 // <SVG> Иконка соцмальные сети в карточке Сотрудника Команды
 .team__social-icon {

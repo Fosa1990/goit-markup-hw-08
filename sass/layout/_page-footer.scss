@@ -1,29 +1,48 @@
 // ============================== Подвал Footer START ==============================
 // <FOOTER>
 .footer {
-  display: flex;
-  padding-top: 60px;
-  padding-bottom: 60px;
-
   background-color: var(--footer-color);
+
+  &.section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 // <DIV> Контейнер ОБЩИЙ в Футере
 .footer__container {
-  display: flex;
-}
-// <A> Ссылка Логотипа в Футере
-.footer__logo {
-  margin-top: 0;
-  margin-bottom: 20px;
+  text-align: center;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  @media screen and (min-width: $desktop) {
+    // justify-content: space-between;
+    justify-content: space-evenly;
+    text-align: start;
+    flex-wrap: nowrap;
+    align-items: baseline;
+  }
 }
 
 // =============== Левая часть футера =================
 // <DIV> Контейнер Левой Части Футера
 .address__container {
   align-items: center;
-  margin-right: 70px;
-}
 
+  @media screen and (max-width: 1199px) {
+    margin-bottom: 60px;
+  }
+  // original
+  // margin-right: 70px;
+}
+// <A> Ссылка Логотипа в Футере
+.footer__logo {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
 // <ADDRESS> Контейнер Контактов
 .address {
   font-style: normal;
@@ -64,17 +83,25 @@
 }
 
 // ========== Присоеденийтесь ==========
-// <DIV> Контейнер ВСЕГО Футера
+// <DIV> Контейнер Серединки Футера
 .join-container {
   align-items: center;
-  margin-right: 93px;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 60px;
+  }
+
+  // original
+  // margin-right: 93px;
 }
 // <b> Текст "Присоеденяйтесь"
 .join-text {
   display: inline-block;
   margin-bottom: 20px;
+
   font-weight: 700;
   line-height: 1.14;
+  text-align: center;
   text-transform: uppercase;
 
   color: var(--third-text-color);
@@ -82,6 +109,8 @@
 // <UL> Список социальных сетей
 .join {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 // <Li> социальная сеть
 .join__item {
@@ -95,11 +124,12 @@
 // <A> Список социальных сетей в футере
 .join__link {
   display: flex;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
   justify-content: center;
   align-items: center;
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
   color: var(--primary-icon-color);
   background-color: var(--social-bg-color);
   box-shadow: var(--shadow-third);
@@ -126,24 +156,33 @@
 // <DIV> Контейнер правой части футера
 .subscription-container {
   align-items: center;
+
+  @media screen and (min-width: $desktop) {
+    padding-right: 200px;
+  }
 }
 // <Form>
 .subscription {
+  position: relative;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: flex-start;
-  position: relative;
+  align-items: center;
 }
 // <Label>
 .subscription__label {
   margin-bottom: 20px;
+
   font-weight: 700;
-  font-size: 14px;
   line-height: 1.14;
+  text-align: center;
   text-transform: uppercase;
 
   color: var(--third-text-color);
+
+  @media screen and (min-width: $desktop) {
+    align-self: flex-start;
+  }
 
   &:hover {
     cursor: pointer;
@@ -153,10 +192,10 @@
 .subscription__input {
   display: flex;
   align-items: center;
-  width: 358px;
+  width: 100%;
   height: 50px;
-  margin-right: 12px;
   padding: 15px 16px;
+  margin-bottom: 20px;
 
   font-size: 16px;
   line-height: 1.25;
@@ -176,13 +215,19 @@
   &:focus {
     border-color: var(--main-accent-color);
   }
+
+  @media screen and (min-width: $tablet) {
+    width: 358px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 0;
+    margin-right: 12px;
+  }
 }
 
 // <Button> Кнопка "принятия спама"
 .subscription-button {
-  position: absolute;
-  bottom: 0;
-  right: -200px;
+  position: relative;
 
   display: flex;
   align-items: center;
@@ -198,6 +243,7 @@
 
   cursor: pointer;
 
+  text-align: center;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
@@ -207,17 +253,27 @@
   background-color: var(--main-accent-color);
   box-shadow: 0px 4px 4px var(--black-color-15prts);
 
-  transition: background-color var(--time250ms) var(--cubic);
+  transform: scale(1);
+
+  transition: background-color var(--time250ms) var(--cubic),
+    transform var(--time1000ms) var(--cubic);
 
   &:hover,
   &:focus {
     background-color: var(--secondary-accent-color);
+    transform: scale(1.1);
   }
 
   &:active {
     background-color: var(--secondary-accent-color);
     box-shadow: var(--shadow-primary);
-    transform: translateY(4px);
+    transform: translateY(4px) scale(1.1);
+  }
+
+  @media screen and (min-width: $desktop) {
+    position: absolute;
+    bottom: 0;
+    right: -200px;
   }
 }
 
