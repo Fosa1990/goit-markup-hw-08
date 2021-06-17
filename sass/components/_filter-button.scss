@@ -14,21 +14,25 @@
   border: none;
   border-radius: 4px;
 
+  transform: scale(1);
+
   transition: color var(--time250ms) var(--cubic),
     background-color var(--time250ms) var(--cubic),
-    box-shadow var(--time250ms) var(--cubic);
+    box-shadow var(--time250ms) var(--cubic),
+    transform var(--time1000ms) var(--cubic);
 
   &:hover,
   &:focus {
     color: var(--third-text-color);
     background-color: var(--main-accent-color);
     box-shadow: var(--shadow-primary);
+    transform: scale(1.1);
   }
 
   &:active {
     color: var(--third-text-color);
     background-color: var(--secondary-accent-color);
     box-shadow: var(--shadow-primary);
-    transform: translateY(4px);
+    transform: translateY(4px) scale(1.1);
   }
 }

@@ -17,23 +17,35 @@
 
   font-weight: 700;
   font-size: 20px;
-  line-height: 1.15;
+  line-height: 1.5;
   text-align: center;
   color: var(--secondary-text-color);
+
+  @media screen and (min-width: $desktop) {
+    line-height: 1.15;
+  }
 }
 
 //  <Label> Контейнер поля ввода
 .form__field {
   position: relative;
+  display: block;
   width: 100%;
 
   &:not(:last-child) {
     margin-bottom: 28px;
   }
+
+  @media screen and (min-width: $tablet) {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
 }
 
 //  <Input> Поле ввода
 .form__input {
+  display: block;
   width: 100%;
   height: 40px;
   padding: 12px 12px 12px 42px;
@@ -77,13 +89,26 @@
   color: var(--primary-text-color);
 
   transform: translate(0, -50%);
-  transition: transform var(--time250ms) linear, color var(--time250ms) var(--cubic);
+  transition: transform var(--time250ms) linear,
+    color var(--time250ms) var(--cubic);
 
   //  <Span> Анимация текста при фокусе поля ввода
   .form__field:focus-within > &,
   .form__input:not(:placeholder-shown) + & {
     color: var(--main-accent-color);
-    transform: translateY(-40px) translateX(-40px);
+    transform: translateY(-35px) translateX(-40px);
+  }
+  @media screen and (max-width: 677px) {
+    .form__field:focus-within > &,
+    .form__input:not(:placeholder-shown) + & {
+      transform: translateY(-40px) translateX(-33px);
+    }
+  }
+  @media screen and (max-width: 1199px) {
+    .form__field:focus-within > &,
+    .form__input:not(:placeholder-shown) + & {
+      transform: translateY(-35px) translateX(-33px);
+    }
   }
 }
 
@@ -116,7 +141,7 @@
 //  <Span> Описание поля коментария
 .form__label-comment {
   position: absolute;
-  top: -15%;
+  top: -12%;
   left: 0;
 
   font-size: 12px;
@@ -132,6 +157,12 @@
   .form__input:not(:placeholder-shown) + & {
     color: var(--main-accent-color);
     transform: translateX(225%);
+  }
+  @media screen and (max-width: 1199px) {
+    .form__field:focus-within > &,
+    .form__input:not(:placeholder-shown) + & {
+      transform: translateX(180%);
+    }
   }
 }
 
@@ -178,10 +209,15 @@
 
 //  <Span> Текст
 .form__checkbox-policy {
-  font-size: 14px;
-  line-height: 1.71;
+  font-size: 12px;
+  line-height: 1.166;
 
   color: var(--primary-text-color);
+
+  @media screen and (min-width: $desktop) {
+    font-size: 14px;
+    line-height: 1.71;
+  }
 }
 
 //  <SVG> form__icon
