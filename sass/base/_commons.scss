@@ -1,4 +1,9 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  margin: 0 auto;
   color: var(--primary-text-color);
 
   font-family: 'roboto', sans-serif;
@@ -6,6 +11,20 @@ body {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+
+  // @media screen and (min-width: $mobile) {
+  //   max-width: 767px;
+  // }
+  // @media screen and (min-width: $tablet) {
+  //   max-width: 1199px;
+  // }
+  // @media screen and (min-width: $desktop) {
+  //   max-width: 1600px;
+  // }
+
+  &.modal-open {
+    overflow: hidden;
+  }
 }
 
 // Картинки: делаем блоковыми + убирает пространство под картинкой
