@@ -5,20 +5,20 @@
   flex-wrap: wrap;
   justify-content: flex-start;
 
-  margin-top: 60px;
-  margin-bottom: 40px;
+  padding-top: 60px;
+  padding-bottom: 40px;
 
   width: 100%;
 
   @media screen and (min-width: $tablet) {
-    margin-bottom: 30px;
+    padding-bottom: 30px;
     justify-content: center;
   }
 
   @media screen and (min-width: $desktop) {
     justify-content: center;
-    margin-top: 0;
-    margin-bottom: 50px;
+    padding-top: 0;
+    padding-bottom: 50px;
   }
 }
 // <LI> Фильтры

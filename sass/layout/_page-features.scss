@@ -21,9 +21,12 @@
 }
 // <LI> Пункт Особености
 .features__item {
-  &:not(:last-child) {
-    margin-bottom: 30px;
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
   }
+
   @media screen and (min-width: $tablet) and (max-width: 1199px) {
     width: calc((100% - 2 * 15px) / 2);
     //  width: calc((100% - 2 * 30px) / 2);
@@ -40,6 +43,7 @@
     width: calc((100% - 3 * 30px) / 4);
     //  width: calc((100% - 3 * 15px) / 4);
     margin-right: 30px;
+    margin-bottom: 0;
 
     &:last-child {
       margin-right: 0;
