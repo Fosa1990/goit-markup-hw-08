@@ -113,8 +113,6 @@ ul {
 .container {
   width: 100%;
   margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -132,6 +130,13 @@ ul {
 @media screen and (max-width: 767px) {
   .container {
     max-width: 450px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
