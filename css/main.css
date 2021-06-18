@@ -110,13 +110,6 @@ ul {
   }
 }
 
-@media screen and (min-width: 1200px) {
-  .section {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-
 .container {
   width: 100%;
   margin: 0 auto;
@@ -124,7 +117,9 @@ ul {
 
 @media screen and (min-width: 1200px) {
   .container {
-    max-width: 1270px;
+    max-width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
@@ -555,7 +550,8 @@ ul {
   .header {
     display: flex;
     min-height: 80px;
-    padding: 0 15px;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
 }
 
@@ -564,7 +560,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  padding: 16px 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -971,6 +967,8 @@ ul {
 @media screen and (min-width: 1200px) {
   .hero__title {
     max-width: 696px;
+    font-size: 44px;
+    line-height: 1.36;
   }
 }
 
@@ -1000,8 +998,10 @@ ul {
   }
 }
 
-.features__item:not(:last-child) {
-  margin-bottom: 30px;
+@media screen and (max-width: 767px) {
+  .features__item:not(:last-child) {
+    margin-bottom: 30px;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
@@ -1022,6 +1022,7 @@ ul {
   .features__item {
     width: calc((100% - 3 * 30px) / 4);
     margin-right: 30px;
+    margin-bottom: 0;
   }
   .features__item:last-child {
     margin-right: 0;
@@ -1329,14 +1330,14 @@ ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin-top: 60px;
-  margin-bottom: 40px;
+  padding-top: 60px;
+  padding-bottom: 40px;
   width: 100%;
 }
 
 @media screen and (min-width: 768px) {
   .filter {
-    margin-bottom: 30px;
+    padding-bottom: 30px;
     justify-content: center;
   }
 }
@@ -1344,8 +1345,8 @@ ul {
 @media screen and (min-width: 1200px) {
   .filter {
     justify-content: center;
-    margin-top: 0;
-    margin-bottom: 50px;
+    padding-top: 0;
+    padding-bottom: 50px;
   }
 }
 
