@@ -9,8 +9,6 @@
   @media screen and (min-width: $tablet) {
     display: flex;
     min-height: 80px;
-    padding-top: 16px;
-    padding-bottom: 16px;
   }
 }
 // Контейнер главной навигации
@@ -190,19 +188,16 @@
       }
     }
   }
-
-  // <A> Ссылка в Контактах Хедера
-  & .contacts__link {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-
-    height: 16px;
-  }
 }
 
-// <A> Контакты
+// <A> Ссылка в Контактах Хедера
 .contacts__link {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+
+  height: 16px;
+
   font-weight: 500;
   font-size: 24px;
   line-height: 1.166;
@@ -250,7 +245,7 @@
     }
   }
 }
-//  Список соц.сетей в дроп-меню $mobile
+//  Дроп-меню $mobile
 // Контейнер Мобильной навигации
 .menu {
   @media screen and (max-width: 767px) {
@@ -319,7 +314,7 @@
     }
   }
 }
-// <A>
+// <A> Список соц.сетей в дроп-меню $mobile
 .menu__link {
   font-size: 18px;
   line-height: 1.22;
