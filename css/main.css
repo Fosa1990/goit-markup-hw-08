@@ -548,8 +548,6 @@ ul {
   .header {
     display: flex;
     min-height: 80px;
-    padding-top: 16px;
-    padding-bottom: 16px;
   }
 }
 
@@ -737,14 +735,11 @@ ul {
   }
 }
 
-.contacts .contacts__link {
+.contacts__link {
   display: flex;
   align-items: center;
   margin-left: auto;
   height: 16px;
-}
-
-.contacts__link {
   font-weight: 500;
   font-size: 24px;
   line-height: 1.166;
