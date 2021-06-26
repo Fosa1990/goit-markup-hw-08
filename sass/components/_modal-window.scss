@@ -31,6 +31,12 @@
 
     transform: translate(-50%, -50%) scale(1);
   }
+  // Исправляет баг выпадания модалки за екран
+  @media (max-height: 600px) {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 .backdrop.is-hidden .modal {
   transform: translate(-50%, 0) scale(1.1);
