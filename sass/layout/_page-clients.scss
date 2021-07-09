@@ -46,6 +46,20 @@
 
     &:not(:last-child) {
       margin-right: 30px;
+
+      // test
+      transform: rotateY(0deg) scale(1);
+
+      transition: transform var(--time1000ms) var(--cubic) var(--time250ms);
+    }
+
+    &:hover,
+    &:focus {
+      transform: rotateY(360deg);
+
+      @media screen and (min-width: $desktop) {
+        transform: rotateY(360deg) scale(1.1);
+      }
     }
   }
 }

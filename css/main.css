@@ -1295,6 +1295,17 @@ ul {
   }
   .client__item:not(:last-child) {
     margin-right: 30px;
+    transform: rotateY(0deg) scale(1);
+    transition: transform var(--time1000ms) var(--cubic) var(--time250ms);
+  }
+  .client__item:hover, .client__item:focus {
+    transform: rotateY(360deg);
+  }
+}
+
+@media screen and (min-width: 1200px) and (min-width: 1200px) {
+  .client__item:hover, .client__item:focus {
+    transform: rotateY(360deg) scale(1.1);
   }
 }
 
