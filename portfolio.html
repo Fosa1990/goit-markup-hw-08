@@ -151,19 +151,37 @@
 
           <ul class="filter">
             <li class="filter__item">
-              <button type="button" class="filter-button">Все</button>
+              <button type="button" class="filter-button" data-value="AllBtn">
+                Все
+              </button>
             </li>
             <li class="filter__item">
-              <button type="button" class="filter-button">Веб-сайты</button>
+              <button type="button" class="filter-button" data-value="WebBtn">
+                Веб-сайты
+              </button>
             </li>
             <li class="filter__item">
-              <button type="button" class="filter-button">Приложения</button>
+              <button type="button" class="filter-button" data-value="AppBtn">
+                Приложения
+              </button>
             </li>
             <li class="filter__item">
-              <button type="button" class="filter-button">Дизайн</button>
+              <button
+                type="button"
+                class="filter-button"
+                data-value="DesignBtn"
+              >
+                Дизайн
+              </button>
             </li>
             <li class="filter__item">
-              <button type="button" class="filter-button">Маркетинг</button>
+              <button
+                type="button"
+                class="filter-button"
+                data-value="MarketingBtn"
+              >
+                Маркетинг
+              </button>
             </li>
           </ul>
 
@@ -171,7 +189,7 @@
 
           <ul class="card-list">
             <!-- Карточка Технокряк -->
-            <li class="card-list__item">
+            <li class="card-list__item" data-value="Website">
               <a class="card-list__link" href="#">
                 <div class="card-list__thumb">
                   <picture>
@@ -245,7 +263,7 @@
             </li>
 
             <!-- Карточка Постер New Orlean vs Golden Star -->
-            <li class="card-list__item">
+            <li class="card-list__item" data-value="Design">
               <a class="card-list__link" href="#">
                 <div class="card-list__thumb">
                   <picture>
@@ -325,7 +343,7 @@
             </li>
 
             <!-- Карточка Ресторан Seafood -->
-            <li class="card-list__item">
+            <li class="card-list__item" data-value="Application">
               <a class="card-list__link" href="#">
                 <div class="card-list__thumb">
                   <picture>
@@ -403,7 +421,7 @@
             </li>
 
             <!-- Карточка Проект Prime -->
-            <li class="card-list__item">
+            <li class="card-list__item" data-value="Marketing">
               <a class="card-list__link" href="#">
                 <div class="card-list__thumb">
                   <picture>
@@ -476,7 +494,7 @@
             </li>
 
             <!-- Карточка Проект Boxes -->
-            <li class="card-list__item">
+            <li class="card-list__item" data-value="Application">
               <a class="card-list__link" href="#">
                 <div class="card-list__thumb">
                   <picture>
@@ -550,7 +568,7 @@
             </li>
 
             <!-- Карточка Надпись: У вдохновения нет границ -->
-            <li class="card-list__item">
+            <li class="card-list__item" data-value="Website">
               <a class="card-list__link" href="#">
                 <div class="card-list__thumb">
                   <picture>
@@ -628,7 +646,7 @@
             </li>
 
             <!-- Карточка Издание Limited Edition -->
-            <li class="card-list__item">
+            <li class="card-list__item" data-value="Design">
               <a class="card-list__link" href="#">
                 <div class="card-list__thumb">
                   <picture>
@@ -706,7 +724,7 @@
             </li>
 
             <!-- Карточка Проект LAB -->
-            <li class="card-list__item">
+            <li class="card-list__item" data-value="Marketing">
               <a class="card-list__link" href="#">
                 <div class="card-list__thumb">
                   <picture>
@@ -780,7 +798,7 @@
             </li>
 
             <!-- Карточка Надпись: Растущий бизнес -->
-            <li class="card-list__item">
+            <li class="card-list__item" data-value="Application">
               <a class="card-list__link" href="#">
                 <div class="card-list__thumb">
                   <picture>
@@ -977,7 +995,7 @@
     </footer>
 
     <!-- Java Scripts -->
-    <script src="./js/modal.js"></script>
     <script src="./js/mobile-menu.js"></script>
+    <script src="./js/portfolio-filter.js"></script>
   </body>
 </html>
