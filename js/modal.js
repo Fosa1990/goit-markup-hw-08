@@ -9,11 +9,10 @@
   refs.closeModalBtn.addEventListener('click', toggleModal);
 
   function toggleModal() {
-    document.body.classList.toggle("modal-open");
+    document.body.classList.toggle('modal-open');
     refs.modal.classList.toggle('is-hidden');
   }
 })();
-
 
 // data-modal-open - на кнопку открытия модального окна.
 // data-modal-close - на кнопку закрытия модального окна.
