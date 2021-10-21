@@ -32,6 +32,7 @@ function onWebBtnClick() {
     }
   });
 }
+
 function onAppBtnClick() {
   onAllBtnClick();
   filterListItemsArray.forEach(filterItem => {
@@ -40,6 +41,7 @@ function onAppBtnClick() {
     }
   });
 }
+
 function onDesignBtnClick() {
   onAllBtnClick();
   filterListItemsArray.forEach(filterItem => {
@@ -48,6 +50,7 @@ function onDesignBtnClick() {
     }
   });
 }
+
 function onMarketingBtnClick() {
   onAllBtnClick();
   filterListItemsArray.forEach(filterItem => {
